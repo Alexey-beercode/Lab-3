@@ -50,11 +50,11 @@ public:
 	int comparePower(int secondCarPower)
 	{
 		if (power > secondCarPower)
-			return -1;
+			return 1;
 		else if (power == secondCarPower)
 			return 0;
-		else
-			return 1;
+
+		return -1;
 	}
 
 };
