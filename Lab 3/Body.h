@@ -1,25 +1,40 @@
 #pragma once
+#include "Size.h"
+
 class Body
 {
 protected :
 	int doorAmount;
-	int size[3];
+	Size size;
 
 public:
+	Body(int doors,double lenght,double width,double height):size(lenght,width,height)
+	{
+		doorAmount = doors;
+
+	}
+	Body()
+	{
+		doorAmount = 4;
+	}
 	int getDoorAmount()
 	{
 		return doorAmount;
 	}
 
-	int* getSize()
+	Size getSize()
 	{
 		return size;
 	}
 
-	void setSize(int a[3])
+	void setSize(double length,double height,double width)
 	{
-		for (int i = 0; i < 3; i++)
-			size[i] = a[i];
+		 size=Size(length, width, height);
+	}
+
+	void setSize(Size size)
+	{
+		this->size = size;
 	}
 
 	void setDoorAmount(int a)
@@ -28,4 +43,3 @@ public:
 	}
 
 };
-

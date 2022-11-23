@@ -5,6 +5,7 @@ protected:
 	char color[20];
 
 public:
+	Color() :color("Черный") { }
 
 	char* getColor()
 	{

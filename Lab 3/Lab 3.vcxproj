@@ -131,16 +131,23 @@
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="IncorrectInputIntException.cpp" />
+    <ClCompile Include="IncorrectInputStringException.cpp" />
+    <ClCompile Include="IncorrectInputValue.cpp" />
     <ClCompile Include="Lab 3.cpp" />
+    <ClCompile Include="Size.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Body.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Engine.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="IncorrectInputIntException.h" />
+    <ClInclude Include="IncorrectInputStringException.h" />
+    <ClInclude Include="IncorrectInputValue.h" />
+    <ClInclude Include="Size.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

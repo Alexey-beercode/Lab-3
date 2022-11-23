@@ -16,7 +16,12 @@ protected:
 
 public:
 
-	
+	Engine()
+	{
+		type = petrol;
+		volume = 2;
+		power = 200;
+	}
 	engine getType()
 	{
 		return type;

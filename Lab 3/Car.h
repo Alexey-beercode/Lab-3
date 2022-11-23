@@ -10,6 +10,12 @@ using namespace std;
 		char brand[20];
 
 	public:
+
+		Car()
+		{
+			strcpy_s(brand, "BMW");
+		}
+
 		char* getBrand()
 		{
 			return brand;
@@ -24,7 +30,7 @@ using namespace std;
 		void printAllInfo()
 		{
 			setlocale(LC_ALL, "ru");
-			cout << "Бренд машины : " << brand << "Цвет : " << color << "Длина : " << size[0]<<"м." << endl << "Ширина : " << size[1]<<"м." << endl << "Высота : " << size[2]<<"м." << endl;
+			cout << "Бренд машины : " << brand <<endl<< "Цвет : " << color <<endl<< "Длина : " << size.length <<"м." << endl << "Ширина : " << size.width<<"м." << endl << "Высота : " << size.height<<"м." << endl;
 			cout << "Количество дверей : " << doorAmount << endl << "Объем двигателя : " << volume << endl << "Мощность двигателя : " << power << endl << "Тип двигателя : ";
 			switch (type)
 			{
