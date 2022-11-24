@@ -78,26 +78,41 @@ int main()
 				cout << "Ввведите длину : " << endl;
 				try
 				{
-					cin >> size.length;
 					rewind(stdin);
-					if (size.length < 0) throw IncorrectInputIntException(1,(char*) "Введено отрицательное значение");
-					if (size.length == 0) throw IncorrectInputIntException(2, (char*)"Введено нулевое значение");
+					cin >> size.length;
+					if (!cin.good()) throw IncorrectInputIntException(1, (char*)"Введено не числовое значение");
+					if (size.length < 0) throw IncorrectInputValueException(1, (char*)"Введено отрицательное значение");
+					if (size.length == 0) throw IncorrectInputValueException(2, (char*)"Введено нулевое значение");
+
 				}
 				catch (IncorrectInputIntException exp)
 				{
 					exp.show();
 					continue;
 				}
-				
+				catch (IncorrectInputValueException exp)
+				{
+					exp.show();
+					continue;
+				}
+
 				cout << "Ввведите ширину : " << endl;
+				
 				try
 				{
-					cin >> size.width;
 					rewind(stdin);
-					if (size.width < 0) throw IncorrectInputIntException(1, (char*)"Введено отрицательное значение");
-					if (size.width == 0) throw IncorrectInputIntException(2, (char*)"Введено нулевое значение");
+					cin >> size.width;
+					if (!cin.good()) throw IncorrectInputIntException(1, (char*)"Введено не числовое значение");
+					if (size.width < 0) throw IncorrectInputValueException(1, (char*)"Введено отрицательное значение");
+					if (size.width == 0) throw IncorrectInputValueException(2, (char*)"Введено нулевое значение");
+
 				}
 				catch (IncorrectInputIntException exp)
+				{
+					exp.show();
+					continue;
+				}
+				catch (IncorrectInputValueException exp)
 				{
 					exp.show();
 					continue;
@@ -105,12 +120,19 @@ int main()
 				cout << "Ввведите высоту : " << endl;
 				try
 				{
-					cin >> size.height;
 					rewind(stdin);
-					if (size.height < 0) throw IncorrectInputIntException(1, (char*)"Введено отрицательное значение");
-					if (size.height == 0) throw IncorrectInputIntException(2, (char*)"Введено нулевое значение");
+					cin >> kolvoDoor;
+					if (!cin.good()) throw IncorrectInputIntException(1, (char*)"Введено не числовое значение");
+					if (size.height < 0) throw IncorrectInputValueException(1, (char*)"Введено отрицательное значение");
+					if (size.height == 0) throw IncorrectInputValueException(2, (char*)"Введено нулевое значение");
+
 				}
 				catch (IncorrectInputIntException exp)
+				{
+					exp.show();
+					continue;
+				}
+				catch (IncorrectInputValueException exp)
 				{
 					exp.show();
 					continue;
@@ -140,7 +162,7 @@ int main()
 						type = Engine::engine::electro;
 						a.setType(type);
 					}
-					else throw IncorrectInputValueException(1, (char*)"Введено неправильное значение при выборе");
+					else throw IncorrectInputValueException(4, (char*)"Введено неправильное значение при выборе");
 				}
 				catch (IncorrectInputValueException exp)
 				{
@@ -155,11 +177,18 @@ int main()
 				try
 				{
 					rewind(stdin);
-					cin >> power;
+					cin >> kolvoDoor;
+					if (!cin.good()) throw IncorrectInputIntException(1, (char*)"Введено не числовое значение");
 					if (power < 0) throw IncorrectInputValueException(1, (char*)"Введено отрицательное значение");
 					if (power == 0) throw IncorrectInputValueException(2, (char*)"Введено нулевое значение");
+
 				}
-				catch(IncorrectInputValueException exp)
+				catch (IncorrectInputIntException exp)
+				{
+					exp.show();
+					continue;
+				}
+				catch (IncorrectInputValueException exp)
 				{
 					exp.show();
 					continue;
@@ -174,8 +203,15 @@ int main()
 				{
 					rewind(stdin);
 					cin >> volume;
+					if (!cin.good()) throw IncorrectInputIntException(1, (char*)"Введено не числовое значение");
 					if (volume < 0) throw IncorrectInputValueException(1, (char*)"Введено отрицательное значение");
 					if (volume == 0) throw IncorrectInputValueException(2, (char*)"Введено нулевое значение");
+
+				}
+				catch (IncorrectInputIntException exp)
+				{
+					exp.show();
+					continue;
 				}
 				catch (IncorrectInputValueException exp)
 				{
@@ -194,7 +230,7 @@ int main()
 					if (!cin.good()) throw IncorrectInputIntException(1, (char*)"Введено не числовое значение");
 					if (kolvoDoor < 0) throw IncorrectInputValueException (1, (char*)"Введено отрицательное значение");
 					if (kolvoDoor == 0) throw IncorrectInputValueException(2, (char*)"Введено нулевое значение");
-					if (kolvoDoor > 6)throw IncorrectInputValueException(2, (char*)"Введено слишком большое значение");
+					if (kolvoDoor > 6)throw IncorrectInputValueException(3, (char*)"Введено слишком большое значение");
 					
 				}
 				catch (IncorrectInputIntException exp)
